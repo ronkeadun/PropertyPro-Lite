@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset = "UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /> 
+    <title>Property Pro Lite</title>
+    <link rel="stylesheet" href="font-awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+    
+    <header id="header" class="header"><!-- <header> -->
+        <div class="top-header">
+            <div class="container">
+                <div class="site-info">
+                    <span><i class="far fa-clock" style="font-size:16px;"></i> Mon-Sat 8.00-18.00. Sunday CLOSED</span>
+                </div>
+                <div class="site-contact">
+                    <span><i class="fas fa-phone-volume"></i> Tel No: +2348013366678</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="toggle-menu">
+            <div class="site-logo site-logo-responsive">
+                <h1><a href=""><span class="property">Property</span><span class="prolite">ProLite</span> </a></h1>
+            </div>
+            <div class="icon-toggle" onclick="myFunction()">
+                <span><i class="fas fa-bars"></i></span>
+            </div>
+        </div>
+
+        <div class="middle-header">
+            <div class="container">
+                <div class="site-logo site-logo-desk">
+                    <h1><a href=""><span class="property">Property</span><span class="prolite">ProLite</span> </a></h1>
+                </div>
+
+                <nav id="site-nav" class="site-nav">
+                    <ul>
+                        <li><a href="home.html">Home</a></li>
+                        <li><a href="#">Listings</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Properties</a></li>
+                        <li class="active"><a href="#">Login</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+    </header>
+            
+    <section class="main-content">    
+        <div class="signin-container">
+            <div class="form">
+                <form id="register-form">
+                    <h1>Create an account to get started</h1>
+                    <input type="text" placeholder="First Name" />
+                    <input type="text" placeholder="Last Name" />
+                    <input type="text" placeholder="Email" />
+                    <input type="text" placeholder="Password" />
+                    <a href="home.html"><input type="button" value="SUBMIT" /></a>
+                    <p class="message">Already Registered? <a href="#">LOGIN</a> </p>
+                </form>
+    
+                <form id="login-form">
+                    <h1>Welcome</h1>
+                    <input type="text" placeholder="Email" required/>
+                    <input type="password" placeholder="Password" />
+                    <a href="home.html"><input type="button" value="LOGIN" /></a>
+                    <p class="message">Not Registered? <a href="#">REGISTER</a> </p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+
+    <footer class="footer">
+        <div class="container wrapper">Copyright &copy; 2019. All rights reserved</div>
+    </footer>
+
+</body>
+<script src='https://code.jquery.com/jquery-3.2.1.min.js'></script>
+<script type="text/javascript">
+    $('.message a').click(()=>{
+        $('form').animate({
+            height:"toggle", 
+            opacity: "toggle"
+        },
+            "slow"
+        );
+    });
+
+    const myFunction = ()=>{
+        let x = document.getElementById("site-nav");
+        if(x.style.display === "block"){
+            x.style.display="none"
+        }else{
+            x.style.display="block"
+        }
+    }
+</script>
+</html>
