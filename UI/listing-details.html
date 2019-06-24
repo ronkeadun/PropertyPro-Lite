@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Property Listing</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" href="font-awesome/css/all.css">
+</head>
+<body>
+	<header id="header" class="header"><!-- <header> -->
+		<div class="top-header">
+			<div class="container">
+				<div class="site-info">
+					<span><i class="far fa-clock" style="font-size:16px;"></i> Mon-Sat 8.00-18.00. Sunday CLOSED</span>
+				</div>
+				<div class="site-contact">
+					<span><i class="fas fa-phone-volume"></i> Tel No: +2348013366678</span>
+				</div>
+			</div>
+		</div>
+
+		<div class="toggle-menu">
+			<div class="site-logo site-logo-responsive">
+				<h1><a href=""><span class="property">Property</span><span class="prolite">ProLite</span> </a></h1>
+			</div>
+			<div class="icon-toggle" onclick="myFunction()">
+				<span><i class="fas fa-bars"></i></span>
+			</div>
+		</div>
+
+		<div class="middle-header">
+			<div class="container">
+				<div class="site-logo site-logo-desk">
+					<h1><a href=""><span class="property">Property</span><span class="prolite">ProLite</span> </a></h1>
+				</div>
+
+				<nav id="site-nav" class="site-nav">
+					<ul>
+						<li><a href="home.html">Home</a></li>
+						<li><a href="listing.html">Listings</a></li>
+						<li class="active"><a href="listing-details.html">Services</a></li>
+						<li><a href="#">Properties</a></li>
+						<li><a href="index.html">Login</a></li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</header>
+	<main>
+		<section class="case-img">
+			<div class="wrapper">
+				<h2>Villa</h2>
+				<img src="images/image11.jpg">
+				<article>
+					<h3>Villa</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  </p>
+				</article>
+		</section>
+	</main>
+	<footer class="footer">
+		<div class="container wrapper">Copyright &copy; 2019. All rights reserved</div>
+	</footer>
+
+	<script type="text/javascript">
+		const myFunction = ()=>{
+			let x = document.getElementById("site-nav");
+			if(x.style.display === "block"){
+				x.style.display="none"
+			}else{
+				x.style.display="block"
+			}
+		}
+	</script>
+</body>
+</html>
