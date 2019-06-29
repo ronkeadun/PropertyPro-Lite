@@ -18,25 +18,7 @@ body{
     height:100%;
     overflow: hidden;
 }
-@media only screen and (min-width: 760px){
-	.wrapper{
-		width: 1000px;
-		margin: 0 auto;
-	}
-	.index-links{
-		overflow: hidden;
-	}
-	.index-links div{
-		margin: 20px 10px 0;
-		height: 230px;
-		background: #f2f2f2;
-		float: left;
-	}
-	.box-link{
-		width: calc(50% - 20px)!important;
-	}
 
-}
 /****************CASES************************/
 .cases-links{
 	overflow: hidden;
@@ -67,7 +49,6 @@ body{
 .case-img h2{
 	font-size: 28px;
 	font-weight: 600;
-	color: #111; 
 	text-align: center;
 	text-transform: uppercase;
 }
@@ -75,21 +56,83 @@ body{
 	display: block;
 	margin: 0 auto;
 	padding: 30px 0;
-	width: 50%;
+	width: 70%;
 }
-.case-img article h3{
-	font-size: 28px;
+.wrapper h3{
+	font-size: 24px;
 	font-weight: 600;
-	color: #111; 
 	text-transform: uppercase;
 	padding-bottom: 20px;
 }
-.case-img article p{
-	font-size: 16px;
-	font-weight: 600;
-	line-height: 24px;
-	color: #111; 
+.property-details ul li{
+	padding: 0.7rem;
+	font-size: 20px;
+}
+.wrapper p{
+	line-height: 26px;
+}
+/*table heading styling*/
+.property-table{
+  height: 35px;
+  width:20%;
+  font-size: 14px;
+  color:#fff;
+  background-color:#dca350;
+  text-align: center;
+  padding-top:8px;
+  margin:30px auto 10px;
+}
+/*table styles */
+table{
+  border-spacing: 2px;
+  text-align: center;
+  margin-bottom: 30px;
+  color:#ffffff;
+  line-height: 1.5;
+}
+
+table tr th{
+	font-size: 10px;
+	padding: 6px 5px;
+	margin: 15px;
 	text-transform: uppercase;
-	column-count:3;
-	column-gap:30px;
+	background-color: #484848;
+}
+table tr td {
+	font-size: 10px;
+	padding: 0.4em 1em;
+	background-color: #222222;
+}
+@media only screen and (min-width: 760px){
+	.wrapper{
+		width: 1000px;
+		margin: 0 auto;
+	}
+	.index-links{
+		overflow: hidden;
+	}
+	.index-links div{
+		margin: 20px 10px 0;
+		height: 230px;
+		background: #f2f2f2;
+		float: left;
+	}
+	.box-link{
+		width: calc(50% - 20px)!important;
+	}
+	.property-table{
+	  height: 35px;
+	  width:20%;
+	  font-size: 20px;
+	  padding-top:5px;
+	}
+	table tr th{
+	  font-size: 15px;
+	  padding: 16px 10px;
+	  margin: 15px;
+	}
+	table tr td{
+	  font-size:13px;
+	  padding: 0.6em 2em;
+	}
 }
