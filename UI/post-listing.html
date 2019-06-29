@@ -53,14 +53,16 @@
     </header>
             
     <section class="main-content">
-        <form id="create-property" method="POST" action= "./listing.html">    
+        <form id="create-property" method="POST" action= "./listing-details.html">    
             <div class="form">
-                <h1>Create Property Listing</h1>
+                <h1>Post Property Listing</h1>
+                <label>Property Image: </label><input type="text" placeholder="Image" id="image"/>
                 <label>Owner: </label><input type="text" placeholder="Owner" id="owner"/>
                 <label>Price: </label><input type="text" placeholder="Price" id="price"/>
                 <label>State: </label><input type="text" placeholder="State" id="state"/>
                 <label>City: </label><input type="text" placeholder="City" id="city"/>
                 <label>Address: </label><input type="text" placeholder="Address" id="address"/>
+                <label>Created On: </label><input type="text" placeholder="Created On" id="created-on"/>
                 <label>Property Type: </label>
                 <select name="property-type">
                     <option value="flat">Flat</option>
@@ -74,7 +76,11 @@
                 </select>
                 <label>Description: </label>
                 <textarea name="description" rows="3"></textarea>
-                <a href="listing.html"><input type="submit" value="CREATE LISTING" id="createProperty"/></a>
+                <div class="post-links">
+                    <a href="#"><input type="submit" value="Add Listing" id="addProperty"/></a>
+                    <a href="#"><input type="submit" value="Update Listing" id="updateProperty"/></a>
+                    <a href="#"><input type="submit" value="Delete Listing" id="deleteProperty"/></a>
+                </div>
             </div>
         </form>
     </section>
