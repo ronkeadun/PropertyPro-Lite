@@ -25,6 +25,24 @@ class Properties{
 		});
 	}
 
+	static getSpecificProAdvert(req, res){
+		const property = properties.find((c)=>c.id === parseInt(req.params.propertyId));
+		if(isNaN(req.params.propertyId)){
+			res.send ("Property Id must be a number");
+		}else if(!property){
+			res.status(404).json({
+			    status: 'error',
+			    message: 'The property with the given ID was not found',
+			});
+		}
+		else{
+			res.status(200).json({
+			    status: 'success',
+			    data: property
+			});
+		}
+	}
+
 }
 
 export default Properties;
