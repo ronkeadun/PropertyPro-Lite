@@ -113,6 +113,28 @@ class Properties{
 		})
 	}
 
+	static deleteSpecificRide(req, res){
+		//Look up the property
+		const property = properties.find((c)=>c.id === parseInt(req.params.propertyId));
+		
+		//If not existing return 404
+		if(!property){
+			res.status(404).send({
+		 		status:"error",
+		 		message:"The property with the given ID was not found"
+		 	})
+		 	return
+		}
+
+		const propertyIndex = properties.indexOf(property)
+		properties.splice(propertyIndex, 1)
+		//Return deleted property
+		res.status(200).send({
+			status:"success",
+			data: property
+		})
+	}
+
 }
 
 export default Properties;

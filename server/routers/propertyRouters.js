@@ -14,4 +14,7 @@ router.post("/", Properties.createProAdvert);
 //update a Property route
 router.patch("/:propertyId", Properties.updateProAdvert);
 
+//delete a Property route
+router.delete("/:propertyId", Properties.deleteSpecificRide);
+
 export default router;
