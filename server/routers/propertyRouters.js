@@ -8,4 +8,10 @@ router.get("/", Properties.getAllProAdvert);
 //get a specific Property advert route
 router.get("/:propertyId", Properties.getSpecificProAdvert);
 
+//create Property advert route
+router.post("/", Properties.createProAdvert);
+
+//update a Property route
+router.patch("/:propertyId", Properties.updateProAdvert);
+
 export default router;
