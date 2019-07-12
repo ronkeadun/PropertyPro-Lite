@@ -42,7 +42,7 @@
                     <ul>
                         <li><a href="home.html">Home</a></li>
                         <li><a href="gallery.html">Gallery</a></li>
-                        <li><a href="listing-details.html">Listing Details</a></li>
+                        <li><a href="search.html">Search Property</a></li>
                         <li class="active"><a href="#">Post Listing</a></li>
                         <li><a href="index.html">Login</a></li>
                     </ul>
@@ -52,38 +52,40 @@
 
     </header>
             
-    <section class="main-content">
-        <form id="create-property" method="POST" action= "./listing-details.html">    
-            <div class="form">
-                <h1>Post Property Listing</h1>
-                <label>Property Image: </label><input type="text" placeholder="Image" id="image"/>
-                <label>Owner: </label><input type="text" placeholder="Owner" id="owner"/>
-                <label>Price: </label><input type="text" placeholder="Price" id="price"/>
-                <label>State: </label><input type="text" placeholder="State" id="state"/>
-                <label>City: </label><input type="text" placeholder="City" id="city"/>
-                <label>Address: </label><input type="text" placeholder="Address" id="address"/>
-                <label>Created On: </label><input type="text" placeholder="Created On" id="created-on"/>
-                <label>Property Type: </label>
-                <select name="property-type">
-                    <option value="flat">Flat</option>
-                    <option value="house">House</option>
-                    <option value="any" selected>Any</option>
-                </select>
-                <label>Property Status: </label>
-                <select name="status">
-                    <option value="available">Available</option>
-                    <option value="sold">Sold</option>
-                </select>
-                <label>Description: </label>
-                <textarea name="description" rows="3"></textarea>
-                <div class="post-links">
-                    <a href="#"><input type="submit" value="Add Listing" id="addProperty"/></a>
-                    <a href="#"><input type="submit" value="Update Listing" id="updateProperty"/></a>
-                    <a href="#"><input type="submit" value="Delete Listing" id="deleteProperty"/></a>
+    <main>
+        <section class="main-content">
+            <form id="create-property" method="POST" action= "./gallery.html" enctype="multipart/form-data">    
+                <div class="form">
+                    <h1>Post Property Listing</h1>
+                    <label>Owner: </label><input type="text" placeholder="Owner" id="owner"/>
+                    <label>Price: </label><input type="text" placeholder="Price" id="price"/>
+                    <label>State: </label><input type="text" placeholder="State" id="state"/>
+                    <label>City: </label><input type="text" placeholder="City" id="city"/>
+                    <label>Address: </label><input type="text" placeholder="Address" id="address"/>
+                    <label>Created On: </label><input type="text" placeholder="Created On" id="created-on"/>
+                    <label>Property Type: </label>
+                    <select name="property-type">
+                        <option value="flat">Flat</option>
+                        <option value="house">House</option>
+                        <option value="any" selected>Any</option>
+                    </select>
+                    <label>Property Status: </label>
+                    <select name="status">
+                        <option value="available">Available</option>
+                        <option value="sold">Sold</option>
+                    </select>
+                    <label for="image_url">Property Image: </label><input type="file" id="image_url" name="image_url" accept="image_url/*" required />
+                    <label>Description: </label>
+                    <textarea name="description" rows="3"></textarea>
+                    <div class="post-links">
+                        <a href="#"><input type="submit" value="Add Listing" id="addProperty"/></a>
+                        <a href="#"><input type="submit" value="Update Listing" id="updateProperty"/></a>
+                        <a href="#"><input type="submit" value="Delete Listing" id="deleteProperty"/></a>
+                    </div>
                 </div>
-            </div>
-        </form>
-    </section>
+            </form>
+        </section>
+    </main>
 
 
     <footer class="footer">

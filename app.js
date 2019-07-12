@@ -1,16 +1,36 @@
 import express from 'express'; // load express module/library(import express from node modules)
 import path from 'path';
-import bodyParser from 'body-parser';
 
-import propertyRoutes from "./server/routers/propertyRouters.js";
-import validateProperty from './server/controllers/propertyControllers.js'
+import propertyRoutes from "./server/routes/propertyRouters.js"; 
+
 
 const app = express(); // create an instance of express for use
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(express.static("UI"));
+app.use("/public/uploads", express.static("public/uploads"));
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+
+
+app.use((req, res, next)=>{
+	res.header("Access-Control-Allow-Origin", "*")
+	res.header("Access-Control-Allow-Headers", "Content-Type")
+	next()
+})
 
 app.use("/api/v1/properties", propertyRoutes);
+
+app.use((req, res, next)=>{
+	res.sendStatus(404);
+});
+
+/*app.use((err, req, res, next)=>{
+	res.status(err.status || 500);
+	res.json({
+		message: err.message,
+		error: req.app.get("env") === "development" ? err : {}
+	})
+});*/
 
 
 const port = process.env.PORT || 3000;
