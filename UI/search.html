@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Property Listing</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" href="font-awesome/css/all.css">
+</head>
+<body>
+	<header id="header" class="header"><!-- <header> -->
+		<div class="top-header">
+			<div class="container">
+				<div class="site-info">
+					<span><i class="far fa-clock" style="font-size:16px;"></i> Mon-Sat 8.00-18.00. Sunday CLOSED</span>
+				</div>
+				<div class="site-contact">
+					<span><i class="fas fa-phone-volume"></i> Tel No: +2348013366678</span>
+				</div>
+			</div>
+		</div>
+
+		<div class="toggle-menu">
+			<div class="site-logo site-logo-responsive">
+				<h1><a href=""><span class="property">Property</span><span class="prolite">ProLite</span> </a></h1>
+			</div>
+			<div class="icon-toggle" onclick="myFunction()">
+				<span><i class="fas fa-bars"></i></span>
+			</div>
+		</div>
+
+		<div class="middle-header">
+			<div class="container">
+				<div class="site-logo site-logo-desk">
+					<h1><a href=""><span class="property">Property</span><span class="prolite">ProLite</span> </a></h1>
+				</div>
+
+				<nav id="site-nav" class="site-nav">
+					<ul>
+						<li><a href="home.html">Home</a></li>
+						<li><a href="gallery.html">Gallery</a></li>
+						<li class="active"><a href="#">Search Property</a></li>
+                        <li><a href="post-listing.html">Post Listing</a></li>
+						<li><a href="index.html">Login</a></li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</header>
+	
+	<main>
+        <section class="main-content">
+            <form id="search-property" method="POST" action= "" enctype="multipart/form-data">    
+                <div class="form">
+                    <h1>Search Property Listing</h1>
+                    <label>City: </label>
+                    <select name="property-type">
+                        <option value="ikeja">Ikeja</option>
+                        <option value="ogba">Ogba</option>
+                        <option value="ketu" selected>Ketu</option>
+                    </select>
+                    <label>State: </label>
+                    <select name="property-type">
+                        <option value="ogun">Ogun</option>
+                        <option value="lagos" selected>Lagos</option>
+                        <option value="ondo">Ondo</option>
+                        <option value="kwara">Kwara</option>
+                        <option value="osun">Osun</option>
+                    </select>
+                    <label>Price: </label>
+                    <select name="property-price">
+                        <option value="" disabled="disabled" selected>Select Price Range</option>
+                        <option value="1">500k - 1M</option>
+                        <option value="2">2M - 5M</option>
+                        <option value="3">6M - 10M</option>
+                        <option value="4">11M - 20M</option>
+                        <option value="5">20M - 50M</option>
+                        <option value="6">60M - 100M</option>
+                        <option value="7">100M - 500M</option>
+                    </select>
+                    
+                    <label>Property Type: </label>
+                    <select name="property-type">
+                        <option value="" disabled="disabled" selected>Choose a propery type</option>
+                        <option value="Bungalow">Bungalow</option>
+                        <option value="Flat">Flat</option>
+                        <option value="Luxury">Luxury</option>
+                        <option value="Rental">Rental</option>
+                        <option value="Commercial">Commercial</option>
+                        <option value="Office Space">Office Space</option>    
+                        <option value="3 Bedroom Apartment">3 Bedroom Apartment</option>
+                        <option value="Boys Quarter">Boys Quarter</option>
+                        <option value="Duplex">Duplex</option>
+                        <option value="2 Bedroom Apartment">2 Bedroom Apartment</option>
+                    </select>
+           
+                    <a href="#"><input type="submit" value="Search Listing" id="searchProperty"/></a>               
+                </div>
+            </form>
+        </section>
+    </main>
+	
+	<footer class="footer">
+		<div class="wrapper">Copyright &copy; 2019. All rights reserved</div>
+	</footer>
+
+	<script type="text/javascript">
+		const myFunction = ()=>{
+			let x = document.getElementById("site-nav");
+			if(x.style.display === "block"){
+				x.style.display="none"
+			}else{
+				x.style.display="block"
+			}
+		}
+	</script>
+</body>
+</html>

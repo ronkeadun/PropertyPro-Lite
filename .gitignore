@@ -1,6 +1,7 @@
 node_modules/
 .nyc_output/
-.vscode/
 .env
 package-lock.json
 UI/images/
+dist/
+public/
