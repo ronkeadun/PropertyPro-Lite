@@ -9,7 +9,7 @@ import usersRoutes from "./server/routes/usersRouters.js";
 
 
 
-const app = express(); 
+const app = express(); // create an instance of express for use
 
 app.use(express.static("UI"));
 app.use("/public/uploads", express.static("public/uploads"));
