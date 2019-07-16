@@ -5,6 +5,7 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "babel": "babel",
     "start": "babel-node app.js",
     "clean": "rm -rf dist",
     "build": "npm run clean && mkdir dist && babel app.js -s -d dist",
