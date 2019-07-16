@@ -1,44 +1,11 @@
 import Joi from 'joi';
-import path from 'path';
 import {properties} from '../models/properties.js';
-import multer from 'multer';
 import cloudinary from 'cloudinary';
 import env from 'dotenv';
+import upload from '../middleware/propertyMiddleware';
+
 
 env.config();
-
-//Set Storage Engine for uploading files with multer
-const storage = multer.diskStorage({
-	destination: './public/uploads/',
-	filename : (req, file, cb)=>{
-		cb(null, `${Date.now()}-${file.originalname}`);
-	}
-});
-
-//Check File Type
-const checkFileType = (file, cb)=>{
-	//Allowed ext
-	const filetypes = /jpeg|jpg|png|gif/;
-	//Check ext
-	const extname = filetypes.test(path.extname(file.originalname).toLowerCase())
-	//Check mime
-	const mimetype = filetypes.test(file.mimetype);
-
-	if(extname && mimetype){
-		return cb(null,true);
-	}else{
-		//cb("Error: Images only")
-		cb(new Error("Only image files are allowed!"), false)
-	}
-}
-
-//Initialize upload variable
-const upload = multer({
-	storage: storage,
-	fileFilter: (req,file,cb)=>{
-		checkFileType(file,cb)
-	}
-}).single("image_url")
 
 //Setting up cloudinary
 cloudinary.config({
@@ -47,20 +14,19 @@ cloudinary.config({
 	api_secret: process.env.CLOUDINARY_API_SECRET
 })
 
-
 class Properties{
 	static validateProperty (property){
 		const schema = {
 			id: Joi.number(),
 			owner: Joi.string().min(3),
-			status:Joi.string().required(),
+			status:Joi.string(),
 			price: Joi.string(),
 			state: Joi.string(),
 			city: Joi.string(),
 			address:Joi.string(),
 			type:Joi.string(),
 			created_on:Joi.string(), 
-			image_url: Joi.string()
+			image_url: Joi.string(),
 		}
 		return Joi.validate(property, schema)
 	}
@@ -123,7 +89,7 @@ class Properties{
 					 	return
 					}
 					properties.push(property);
-					res.status(200).json({
+					res.status(201).json({
 						status:"success",
 						data: property
 					})
@@ -204,7 +170,9 @@ class Properties{
 	static findProType(req, res){
 		//Look up the property
 		const property = properties.find((c)=>c.id === parseInt(req.params.propertyId));
-		let propertyFound = req.body;
+		// let propertyFound = req.body;
+		const type = req.query.type;
+		console.log(type)
 		//If not existing return 404
 		if(!property){
 			res.status(404).json({
@@ -212,16 +180,18 @@ class Properties{
 		 		message:"The property with the given ID was not found"
 		 	})
 		 	return
-		}else{
+		}else if(type === req.body.type){
 			//Update property status
-			const { type } = req.query;
-			propertyFound = properties.filter(props => (props.type === propertyType))
-
+			res.status(200).json({
+				status:"success",
+				data: property
+			})
+			/*const { type } = req.query;
+			propertyFound = properties.filter(props => (props.type === propertyType))*/
+		}else{
+			return "Property not found"
 		}
-		res.status(200).json({
-			status:"success",
-			data: propertyFound
-		})
+		
 	}
 
 	static deleteSpecificRide(req, res){
