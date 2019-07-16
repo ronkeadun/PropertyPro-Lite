@@ -8,8 +8,8 @@ export default (req, res, next)=>{
 		req.userData = decoded
 		next()
 	}catch (error){
-		return res.status(401).json({
-			message: "Authentication Failed"
+		return res.status(403).json({
+			error: "Authentication Failed"
 		})
 	}
 }
