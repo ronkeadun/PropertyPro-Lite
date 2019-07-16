@@ -25,8 +25,9 @@ class Properties{
 			city: Joi.string(),
 			address:Joi.string(),
 			type:Joi.string(),
-			created_on:Joi.string(), 
+			created_on:Joi.string(),
 			image_url: Joi.string(),
+			token: Joi.string() 	
 		}
 		return Joi.validate(property, schema)
 	}
@@ -65,20 +66,23 @@ class Properties{
 			}else if(req.file == undefined){
 				res.send("No file selected")
 			}else{
-				console.log(req.file)				
+				const id = properties.length + 1
+				const token = req.headers.authorization.split(" ")[1]
+				const {owner,status,price,state,city,address,type,created_on} = req.body;				
 				cloudinary.v2.uploader.upload(req.file.path, (err,result)=>{
 					req.body.image_url = result.secure_url
 					const property = {
-						id: properties.length + 1,
-						owner: req.body.owner,
-						status:req.body.status,
-						price: req.body.price,
-						state: req.body.state,
-						city: req.body.city,
-						address:req.body.address,
-						type:req.body.type,
-						created_on:req.body.created_on,
-						image_url: req.body.image_url
+						id,
+						owner,
+						status,
+						price,
+						state,
+						city,
+						address,
+						type,
+						created_on,
+						image_url: req.body.image_url,
+						token
 					};
 					const {error} = Properties.validateProperty(req.body)
 					if (error){
@@ -96,7 +100,7 @@ class Properties{
 				})	
 			}
 		})		
-	}
+	} 
 
 	static updateProAdvert(req, res){
 		//Look up the property
@@ -128,6 +132,7 @@ class Properties{
 				property.type =req.body.type,
 				property.created_on =req.body.created_on,
 				property.image_url = req.file.filename
+				property.token = req.headers.authorization.split(" ")[1]
 
 				//Validate
 				const {error} = Properties.validateProperty(req.body)

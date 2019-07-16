@@ -1,7 +1,6 @@
 import express from "express";
 import Properties from "../controllers/propertyControllers.js";
 import auth from "../middleware/auth";
-import upload from '../middleware/propertyMiddleware.js';
 
 const router = express.Router();
 
@@ -15,15 +14,15 @@ router.get("/:propertyId", Properties.getSpecificProAdvert);
 router.get("/:propertyId?type=propertyType", Properties.findProType);
 
 //create Property advert route
-router.post("/", Properties.createProAdvert);
+router.post("/", auth, Properties.createProAdvert);
 
 //update a Property route
-router.patch("/:propertyId", Properties.updateProAdvert);
+router.patch("/:propertyId", auth, Properties.updateProAdvert);
 
 //mark a Property as sold
-router.patch("/:propertyId/sold", Properties.updateProStatus);
+router.patch("/:propertyId/sold", auth, Properties.updateProStatus);
 
 //delete a Property route
-router.delete("/:propertyId", Properties.deleteSpecificRide);
+router.delete("/:propertyId", auth, Properties.deleteSpecificRide);
 
 export default router;

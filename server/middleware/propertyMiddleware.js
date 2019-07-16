@@ -24,6 +24,7 @@ const checkFileType = (req, file, cb)=>{
 		//cb("Error: Images only")
 		cb(new Error("Only image files are allowed!"), false)
 	}
+	
 }
 
 //Initialize upload variable

@@ -37,7 +37,7 @@ class Users{
 				})
 			}else {
 				const user = {
-					id : id,
+					id,
 					email,
 					first_name,
 					last_name,
