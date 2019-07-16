@@ -3,7 +3,8 @@ import upload from './propertyMiddleware.js';
 
 export default (req, res, next)=>{
 	try{
-		const decoded = jwt.verify(req.body.token, process.env.JWT_KEY)
+		const token = req.headers.authorization.split(" ")[1]
+		const decoded = jwt.verify(token, process.env.JWT_KEY)
 		req.userData = decoded
 		next()
 	}catch (error){
