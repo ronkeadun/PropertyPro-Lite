@@ -30,7 +30,7 @@ app.use((req, res, next)=>{
 })
 
 app.use("/api/v1/properties", propertyRoutes);
-app.use("/api/v1/users", usersRoutes);
+// app.use("/api/v1/users", usersRoutes);
 
 
 

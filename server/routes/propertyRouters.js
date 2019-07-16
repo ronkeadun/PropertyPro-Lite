@@ -1,8 +1,13 @@
 import express from "express";
 import Properties from "../controllers/propertyControllers.js";
+import Users from "../controllers/usersController.js";
 import auth from "../middleware/auth";
 
 const router = express.Router();
+
+router.post("/auth/signup", Users.registerUser)
+
+router.post("/auth/signin", Users.userLogin)
 
 //get all Properties adverts route
 router.get("/", Properties.getAllProAdvert);
