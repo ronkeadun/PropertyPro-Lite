@@ -5,3 +5,4 @@ package-lock.json
 UI/images/
 dist/
 public/
+config/

@@ -1,5 +1,8 @@
 import express from "express";
 import Properties from "../controllers/propertyControllers.js";
+import auth from "../middleware/auth";
+import upload from '../middleware/propertyMiddleware.js';
+
 const router = express.Router();
 
 //get all Properties adverts route
