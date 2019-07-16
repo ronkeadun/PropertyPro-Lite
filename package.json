@@ -6,7 +6,6 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "babel-node app.js",
-    "start:bin": "node bin/dev",
     "clean": "rm -rf dist",
     "build": "npm run clean && mkdir dist && babel app.js -s -d dist",
     "production": "npm run build && node bin/production",
