@@ -1,19 +1,14 @@
 import express from "express";
 import Properties from "../controllers/propertyControllers.js";
-import Users from "../controllers/usersController.js";
 import auth from "../middleware/auth";
 
 const router = express.Router();
 
-router.post("/auth/signup", Users.registerUser)
-
-router.post("/auth/signin", Users.userLogin)
-
 //get all Properties adverts route
-router.get("/", Properties.getAllProAdvert);
+router.get("/", auth, Properties.getAllProAdvert);
 
 //get a specific Property advert route
-router.get("/:propertyId", Properties.getSpecificProAdvert);
+router.get("/:propertyId", auth, Properties.getSpecificProAdvert);
 
 //get a all Property advert of a specific type
 router.get("/:propertyId?type=propertyType", Properties.findProType);
