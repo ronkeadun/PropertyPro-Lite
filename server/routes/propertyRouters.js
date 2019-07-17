@@ -5,10 +5,10 @@ import auth from "../middleware/auth";
 const router = express.Router();
 
 //get all Properties adverts route
-router.get("/", Properties.getAllProAdvert);
+router.get("/", auth, Properties.getAllProAdvert);
 
 //get a specific Property advert route
-router.get("/:propertyId", Properties.getSpecificProAdvert);
+router.get("/:propertyId", auth, Properties.getSpecificProAdvert);
 
 //get a all Property advert of a specific type
 router.get("/:propertyId?type=propertyType", Properties.findProType);

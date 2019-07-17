@@ -29,8 +29,16 @@ app.use((req, res, next)=>{
 	next()
 })
 
-app.use("/api/v1/properties", propertyRoutes);
-app.use("/api/v1/users", usersRoutes);
+app.use("/api/v1/property", propertyRoutes);
+app.use("/api/v1/auth", usersRoutes);
+
+
+app.get("/api/v1", (req, res) => {
+  res.status(200).json({
+    status: 'success',
+    message: 'Welcome to Property-Pro-Lite',
+  });
+});
 
 
 

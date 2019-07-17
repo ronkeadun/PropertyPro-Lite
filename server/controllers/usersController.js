@@ -57,7 +57,7 @@ class Users{
 						expiresIn: "1h"
 					}
 				)
-				res.status(200).json({
+				res.status(201).json({
 					status : "success",
 					message : "User created",
 					data: {

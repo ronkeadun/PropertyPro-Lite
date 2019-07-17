@@ -46,7 +46,7 @@ class Properties{
 		}else if(!property){
 			res.status(404).json({
 			    status: 'error',
-			    message: 'The property with the given ID was not found',
+			    error: 'The property with the given ID was not found',
 			});
 		}
 		else{
@@ -88,7 +88,7 @@ class Properties{
 					if (error){
 					 	res.status(404).json({
 					 		status:"error",
-					 		message:error.details[0].message
+					 		error:error.details[0].message
 					 	})
 					 	return
 					}
@@ -110,7 +110,7 @@ class Properties{
 		if(!property){
 			res.status(404).json({
 		 		status:"error",
-		 		message:"The property with the given ID was not found"
+		 		error:"The property with the given ID was not found"
 		 	})
 		 	return
 		}
@@ -139,7 +139,7 @@ class Properties{
 				if (error){
 				 	res.status(404).json({
 				 		status:"error",
-				 		message:error.details[0].message
+				 		error:error.details[0].message
 				 	})
 				 	return
 				}
@@ -182,7 +182,7 @@ class Properties{
 		if(!property){
 			res.status(404).json({
 		 		status:"error",
-		 		message:"The property with the given ID was not found"
+		 		error:"The property with the given ID was not found"
 		 	})
 		 	return
 		}else if(type === req.body.type){
